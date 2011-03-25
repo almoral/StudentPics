@@ -1,14 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>StudentPics</title>
+  <title>StudentPhoto</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
-</head>
-<body>
+  
+  <style type="text/css">
 
+body{
+  
+      }
+
+.awesome_wrapper,
+.footer{
+   width: 740px;
+}
+
+.awesome > form
+{
+	width: 740px;
+	margin: 0 auto;
+}
+
+.clear
+{
+	clear: both;
+}
+
+#downloadForm
+{
+	float: left;
+}
+
+#imgBox
+{
+	float: right;
+	text-align: center;
+	margin-right: 40px;
+}
+
+
+#samplePic
+{
+	display: block;
+}
+
+#contactInfo
+{
+	width: 170px;
+	font-size: 11px;
+	line-height: 125%;
+	margin-top: 10px;
+}
+
+</style>
+  
+  
+  
+</head>
+<body class="home">
+
+   <div id="wrapper">
+
+      <div id="content">
+
+
+         <div class="awesome_wrapper">
+         
+         <div class="awesome">
+	<ul class="hmenu">
+		<%= render 'devise/menu/login_items' %>
+	</ul>
+	
+	<p style="color:green"><%= notice %></p>
+	<p style="color:red"><%= alert %></p>
+		
 <%= yield %>
+<div class="clear">&nbsp;</div>
+<div class="clear">&nbsp;</div>
+		</div>
+		</div>
+	</div>
+
 
 </body>
 </html>

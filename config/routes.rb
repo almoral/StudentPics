@@ -1,4 +1,17 @@
 StudentPics::Application.routes.draw do
+  resources :administrations
+  match 'administrations/' => 'administrations#index'
+  
+
+  devise_for :admins
+
+  devise_for :user
+
+	resources :admins, :only => [:index, :show]
+
+  root :to => "home#index"
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -9,6 +22,7 @@ StudentPics::Application.routes.draw do
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
   # This route can be invoked with purchase_url(:id => product.id)
+
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -38,6 +52,7 @@ StudentPics::Application.routes.draw do
   #       get 'recent', :on => :collection
   #     end
   #   end
+
 
   # Sample resource route within a namespace:
   #   namespace :admin do

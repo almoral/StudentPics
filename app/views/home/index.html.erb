@@ -1,0 +1,21 @@
+<% if user_signed_in? %>
+
+	<% current_user.email %>
+	
+	<div id="downloadImage">
+		
+		<img src="" height="400" width="320" />
+	
+	</div>
+	
+	<% else %>
+	
+	<h1>
+	<%= link_to('Please log in as a regular user', new_user_session_path) %>
+	</h1>
+	<div id="instructions">
+		These are the instructions for parents to download their
+		children's pictures.
+	</div>
+<% end %>
+
