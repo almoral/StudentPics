@@ -15,11 +15,11 @@ class AdminsController < ApplicationController
   # GET /admins/1
   # GET /admins/1.xml
   def show
-    #@admin = Admin.find(current_admin)
-    #respond_to do |format|
-      #format.html # show.html.erb
-      #format.xml  { render :xml => @admin }
-    #end
+    @admin = Admin.find(current_admin)
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @admin }
+    end
     
   end
 
