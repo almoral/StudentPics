@@ -7,7 +7,7 @@ StudentPics::Application.routes.draw do
 
   devise_for :user
 
-	resources :admins, :only => [:index, :show]
+	resources :admins, :only => [:index, :new, :show]
 
   root :to => "home#index"
   
