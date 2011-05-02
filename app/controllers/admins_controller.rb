@@ -1,24 +1,25 @@
 class AdminsController < ApplicationController
   # GET /admins
   # GET /admins.xml
-  def index
   	before_filter :authenticate_admin!
-  	
-	    @admins = Admin.all
+
+	  def index
+	    #@admins = Admin.all
+	    @users = User.all
 	
 	    respond_to do |format|
-	      format.html # index.html.erb
-	      format.xml  { render :xml => @admins }
+	      format.html #{ redirect_to(admins_url) }
+	      format.xml  { render :xml => @users }
 	    end
   end
 
   # GET /admins/1
   # GET /admins/1.xml
   def show
-    @admin = Admin.find(current_admin)
+    @user = User.find(current_user)
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @admin }
+      format.xml  { render :xml => @user }
     end
     
   end
@@ -26,31 +27,31 @@ class AdminsController < ApplicationController
   # GET /admins/new
   # GET /admins/new.xml
   def new
-    @admin = Admin.new
+    @user = User.new
 
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @admin }
+      format.xml  { render :xml => @user }
     end
   end
 
   # GET /admins/1/edit
   def edit
-    @admin = Admin.find(params[:id])
+    @user = User.find(params[:id])
   end
 
   # POST /admins
   # POST /admins.xml
   def create
-    @admin = Admin.new(params[:admin])
+    @user = User.new(params[:admin])
 
     respond_to do |format|
-      if @admin.save
-        format.html { redirect_to(@admin, :notice => 'Admin was successfully created.') }
-        format.xml  { render :xml => @admin, :status => :created, :location => @admin }
+      if @user.save
+        format.html { redirect_to(@user, :notice => 'User was successfully created.') }
+        format.xml  { render :xml => @user, :status => :created, :location => @user }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @admin.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -58,15 +59,15 @@ class AdminsController < ApplicationController
   # PUT /admins/1
   # PUT /admins/1.xml
   def update
-    @admin = Admin.find(params[:id])
+    @user = User.find(params[:id])
 
     respond_to do |format|
-      if @admin.update_attributes(params[:admin])
-        format.html { redirect_to(@admin, :notice => 'Admin was successfully updated.') }
+      if @user.update_attributes(params[:admin])
+        format.html { redirect_to(@user, :notice => 'User was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @admin.errors, :status => :unprocessable_entity }
+        format.xml  { render :xml => @user.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -74,11 +75,11 @@ class AdminsController < ApplicationController
   # DELETE /admins/1
   # DELETE /admins/1.xml
   def destroy
-    @admin = Admin.find(params[:id])
-    @admin.destroy
+    @user = User.find(params[:id])
+    @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to(admins_url) }
+      format.html { redirect_to(users_url) }
       format.xml  { head :ok }
     end
   end

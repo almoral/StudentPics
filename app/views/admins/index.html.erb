@@ -4,7 +4,7 @@
 
 <% end %>
 
-<h1>Listing admins</h1>
+<h1>Listing users</h1>
 
 <table>
   <tr>
@@ -13,15 +13,14 @@
     <th></th>
   </tr>
 
-<% @admins.each do |admin| %>
+<% @users.each do |user| %>
   <tr>
-    <td><%= link_to 'Show', admin %></td>
-    <td><%= link_to 'Edit', edit_admin_path(admin) %></td>
-    <td><%= link_to 'Destroy', admin, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td>User: <%= link_to user.email, user %></td>
+
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Admin', new_admin_path %>
+

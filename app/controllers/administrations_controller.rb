@@ -1,15 +1,15 @@
 class AdministrationsController < ApplicationController
   # GET /administrations
   # GET /administrations.xml
-  
+  	before_filter :authenticate_admin!
   
   def index
  
-    @administrations = Administration.all
+    @users = User.all
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @administrations }
+      format.xml  { render :xml => @users }
     end
   
   end

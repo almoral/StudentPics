@@ -4,6 +4,9 @@ gem 'rails', '3.0.1'
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'devise', '1.1.8'
 gem 'heroku', :group => :development
+gem 'jquery-rails', '>=0.2.7'
+gem 'fastercsv'
+gem 'paperclip'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

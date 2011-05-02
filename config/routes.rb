@@ -1,16 +1,25 @@
 StudentPics::Application.routes.draw do
+  get "users/show"
+
   resources :administrations
   match 'administrations/' => 'administrations#index'
   
 
   devise_for :admins
 
-  devise_for :user
-
-	resources :admins, :only => [:index, :new, :show]
+  devise_for :users, :path_names => {:registration => 'register'}
+  resources :users, :only => [:show, :new]
+  
+  resources :admins, :only => [:index, :new, :show]
+  match 'admins/' => 'admins#index'
 
   root :to => "home#index"
   
+  resources :imports
+  match 'import/process/:id', :to => "imports#proc_csv", :as => "import_proc"
+  
+  resources :pic
+  match 'pic/:id' => 'pic#show' 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

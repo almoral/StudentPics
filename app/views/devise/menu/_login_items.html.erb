@@ -1,12 +1,26 @@
 <% if user_signed_in? %>
 
 	<li>
-				Signed in as <%= current_user.email %>. - 
+		Signed in as <%= current_user.email %>. - 
 		<%= link_to('Logout', destroy_user_session_path) %>
 	</li>
-	<% else %>
+
+<% end %>
+
+<% if admin_signed_in? %>
+	
+	<li>
+		Signed in as <%= current_admin.email %>. -
+	</li>
+	<li>
+		<%= link_to('Logout', destroy_admin_session_path) %> - 
+	</li>
+	<li>
+		<%= link_to('Import CSV', "../imports/new") %>
+	</li>
+		<% else %>
 	<li>
 		<%= link_to('Admin', new_admin_session_path) %>
 	</li>
-
+	
 <% end %>

@@ -2,11 +2,8 @@
 
 	<% current_user.email %>
 	
-	<div id="downloadImage">
-		
-		<img src="" height="400" width="320" />
 	
-	</div>
+
 	
 	<% else %>
 	
@@ -17,6 +14,10 @@
 		These are the instructions for parents to download their
 		children's pictures.
 	</div>
+	
+	<h2>
+		<%= link_to('Sign up', new_user_registration_path) %>
+	</h2>
 	
 	<div id="disclaimerText">
 		This will be your disclaimer.
