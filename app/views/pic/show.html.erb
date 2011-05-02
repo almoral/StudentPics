@@ -1,0 +1,28 @@
+	<% @pic.each do |p| %>
+	
+	<% if p.active_status == 1 %>
+	
+	
+	<div id="downloadImage">
+		<p>
+			Please right-click on the image to save it to your computer.
+		</p>
+
+
+		
+		<%= image_tag(p.school_year + "/" + p.school_name + "/" + "grade_" + p.grade.to_s + "/" + p.random_id.to_s + ".jpg", :alt => "Student Picture", :height => "400", :width => "320") %>
+		
+	</div>
+
+	<% else %>
+	
+	<div id="user_inactive">
+	
+		<p>
+			You have already downloaded this image.<br> If you believe this message is mistaken, please <a href="mailto:alexmorales30@gmail.com">contact us.</a> <br> Thank you
+		</p>
+		
+	</div>
+	
+	<% end %>
+	<% end %>

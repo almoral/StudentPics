@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  random_id: 1
+  school_name: MyString
+  school_year: MyString
+  grade: 1
+  student_last_name: MyString
+  student_first_name: MyString
+
+two:
+  random_id: 1
+  school_name: MyString
+  school_year: MyString
+  grade: 1
+  student_last_name: MyString
+  student_first_name: MyString
