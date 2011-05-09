@@ -71,8 +71,9 @@ private
     params[:pic]["student_last_name"] = line[4]
     params[:pic]["student_first_name"] = line[5]
     params[:pic]["email"] = line[6]
-    params[:pic]["homeroom"] = line[7]
-    params[:pic]["active_status"] = line[8]
+    params[:pic]["IMAGENAME"] = line[7]
+    params[:pic]["homeroom"] = line[8]
+    params[:pic]["active_status"] = line[9]
 
     pic = Pic.create!(params[:pic])
 	end

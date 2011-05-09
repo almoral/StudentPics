@@ -21,19 +21,20 @@ before_filter :authenticate_user!
 	end
 	
 	def show
-		@pic = Pic.where("random_id = ?", params[:id])
-		current_pic = Pic.find_by_random_id(params[:id])
-	
-		if current_pic.active_status = 1	
-	
+		@pic = Pic.where("IMAGENAME = ?", params[:id])
+		
+		@pic.each do |p|
+		if p.active_status == 1	
+				flash[:notice] = 'User is active'
 			respond_to do |format|
 				format.html #show.html.erb
 				format.xml {render :xml => @pic}
 			end	
-			deactivate_user(current_pic)
+			deactivate_user(p)
 		else
 			flash[:notice] = 'You have already downloaded this image. Please contact us if you believe this message is mistaken.'
 		
+		end
 		end
 	end
 

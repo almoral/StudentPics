@@ -1,7 +1,7 @@
 	<% @pic.each do |p| %>
 	
-	<% if p.active_status == 1 %>
-	
+	<% if p.active_status == 1 	%>
+
 	
 	<div id="downloadImage">
 		<p>
@@ -10,7 +10,7 @@
 
 
 		
-		<%= image_tag(p.school_year + "/" + p.school_name + "/" + "grade_" + p.grade.to_s + "/" + p.random_id.to_s + ".jpg", :alt => "Student Picture", :height => "400", :width => "320") %>
+		<%= image_tag(p.school_year + "/" + p.school_name + "/" + "grade_" + p.grade.to_s + "/" + p.IMAGENAME + ".jpg", :alt => "Student Picture", :height => "400", :width => "320") %>
 		
 	</div>
 
